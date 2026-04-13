@@ -1,0 +1,34 @@
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# Postman 集合文件（可选，如果你想分享可以保留）
+*.postman_collection.json
+
+# Go 构建输出
+*.exe
+*.dll
+*.so
+*.dylib
+/userPost
+
+# 测试二进制文件
+*.test
+
+# 覆盖率输出
+*.out
+
+# 依赖目录（Go modules 不需要提交 vendor）
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
