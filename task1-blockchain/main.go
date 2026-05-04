@@ -70,10 +70,7 @@ func main() {
 	// 从环境变量读取发送方私钥
 	privateKeyHex := os.Getenv("SENDER_PRIVATE_KEY")
 	if privateKeyHex == "" {
-		fmt.Println("发送方私钥不存在 请退出")
-
-		// 等待用户按 Ctrl+C 退出
-		waitForExit()
+		fmt.Println("发送方私钥不存在")
 		return
 	}
 
@@ -137,7 +134,7 @@ func sendTransaction(ctx context.Context, client *ethclient.Client, privateKeyHe
 	fmt.Printf("发送方地址: %s\n", fromAddress.Hex())
 
 	// 接收方地址
-	toAddress := common.HexToAddress("0x70997970C51812dc3A010C7d01b50e0d17dc79C8")
+	toAddress := common.HexToAddress(os.Getenv("TO_ADDRESS"))
 	fmt.Printf("接收方地址: %s\n", toAddress.Hex())
 
 	// 获取 nonce
